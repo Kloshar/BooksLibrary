@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<tableofcontents>
+	<chapter>Благодарности</chapter>
+	<chapter>Предисловие</chapter>
+	<chapter>ЧАСТЬ I. ЯЗЫК C#</chapter>
+	<chapter>Глава 1. Создание C#</chapter>
+	<chapter>Глава 2. Краткий обзор элементов C#</chapter>
+	<chapter>Глава 3. Типы данных</chapter>
+	<chapter>Глава 4. Операторы</chapter>
+	<chapter>Глава 5. Управляющие операторы</chapter>
+	<chapter>Глава 6. Введение в классы</chapter>
+	<chapter>Глава 8. Подробнее о методах и классах</chapter>
+	<chapter>Глава 9. Перегрузка операторов</chapter>
+	<chapter>Глава 10. Индексаторы и свойства</chapter>
+	<chapter>Глава 11. Наследование</chapter>
+	<chapter>Глава 12. Интерфейсы</chapter>
+	<chapter>Глава 13. Обработка исключительных ситуаций</chapter>
+	<chapter>Глава 14. Применение средств ввода-вывода</chapter>
+	<chapter>Глава 15. Делегаты</chapter>
+	<chapter>Глава 16. Пространства имен</chapter>
+	<chapter>Глава 17. Динамическая идентификация типов</chapter>
+	<chapter>Глава 18. Обобщения</chapter>
+	<chapter>Глава 19. LINQ</chapter>
+	<chapter>ЧАСТЬ II. БИБЛИОТЕКА C#</chapter>
+	<chapter>Глава 21. Пространство имен System</chapter>
+	<chapter>Глава 22. Строки и форматирование</chapter>
+	<chapter>Глава 23. Многопоточное программирование. Часть первая: основы</chapter>
+	<chapter>Глава 24. Многопоточное программирование. Часть вторая: библиотека TPL</chapter>
+	<chapter>Глава 25. Коллекции</chapter>
+	<chapter>Глава 26. Сетевые средства подключения к Интернету</chapter>
+	<chapter>Приложение. Краткий справочник по составлению</chapter>
+	<chapter>документирующих комментариев</chapter>
+	<chapter>Предметный указатель</chapter>
+</tableofcontents>
