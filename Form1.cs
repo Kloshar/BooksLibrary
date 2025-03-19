@@ -10,11 +10,11 @@ namespace BooksLibrary
     public partial class Form1 : Form
     {
         string connectionString = @"Server=replacement_name\SQLEXPRESS;Database=testTables;Trusted_Connection=True;TrustServerCertificate=True";
-        SqlDataAdapter adapter;
-        DataSet ds;
-        SqlCommandBuilder cb;
+        SqlDataAdapter? adapter;
+        DataSet? ds;
+        //SqlCommandBuilder cb;
         public string operation = string.Empty;
-        public Book b;
+        public Book? b;
 
         public Form1()
         {
@@ -31,7 +31,7 @@ namespace BooksLibrary
 
             edittoc.ShowDialog();
         }
-        async Task ReadDataFromDb(string connectionString)
+        async void ReadDataFromDb(string connectionString)
         {
             using (SqlConnection conn = new SqlConnection(connectionString))
             {
@@ -120,10 +120,10 @@ namespace BooksLibrary
         private void editBook_Click(object sender, EventArgs e)
         {
             b = new Book();
-            b.currentName = booksTable.SelectedRows[0].Cells[1].Value.ToString();
-            b.currentAutor = booksTable.SelectedRows[0].Cells[2].Value.ToString();
+            b.currentName = booksTable.SelectedRows[0].Cells[1].Value.ToString()!;
+            b.currentAutor = booksTable.SelectedRows[0].Cells[2].Value.ToString()!;
             b.currentYear = (int)booksTable.SelectedRows[0].Cells[3].Value;
-            b.currentToc = booksTable.SelectedRows[0].Cells[4].Value.ToString();
+            b.currentToc = booksTable.SelectedRows[0].Cells[4].Value.ToString()!;
 
             int bookId = Convert.ToInt32(booksTable.SelectedRows[0].Cells[0].Value);
 

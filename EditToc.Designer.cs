@@ -38,6 +38,7 @@
             tb.Name = "tb";
             tb.Size = new Size(735, 312);
             tb.TabIndex = 0;
+            tb.KeyDown += tb_KeyDown;
             // 
             // EditToc
             // 
