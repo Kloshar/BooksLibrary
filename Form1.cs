@@ -15,6 +15,7 @@ namespace BooksLibrary
         //SqlCommandBuilder cb;
         public string operation = string.Empty;
         public Book? b;
+        public string toc = string.Empty;
 
         public Form1()
         {
@@ -25,11 +26,6 @@ namespace BooksLibrary
         private void Form1_Load(object sender, EventArgs e)
         {
             ReadDataFromDb(connectionString);
-
-            EditToc edittoc = new EditToc(this);
-            edittoc.FormClosed += (sender, e) => Close();
-
-            edittoc.ShowDialog();
         }
         async void ReadDataFromDb(string connectionString)
         {
@@ -214,11 +210,24 @@ namespace BooksLibrary
         }
         private void editTocBtn_Click(object sender, EventArgs e)
         {
+            int bookId = Convert.ToInt32(booksTable.SelectedRows[0].Cells[0].Value); //сохраним выделенную строку
+            toc = booksTable.SelectedRows[0].Cells[4].Value.ToString()!; //записываем содержание из выделенной строки
             EditToc tocView = new EditToc(this); //открываем форму для резактирования
             if (tocView.ShowDialog() == DialogResult.OK)
-            { 
-                
-            }            
+            {
+                booksTable.SelectedRows[0].Cells[4].Value = toc;
+
+                using (SqlConnection conn = new SqlConnection(connectionString))
+                {
+                    SqlCommand cmd = new SqlCommand()
+                    {
+                        CommandText = $"update Books set TableOfContents = '{toc}' where Books.Id = {bookId}",
+                        Connection = conn,
+                    };
+                    conn.Open();
+                    cmd.ExecuteNonQuery();
+                }
+            }
         }
     }
     public class Book
